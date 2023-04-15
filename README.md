@@ -8,7 +8,7 @@ Esta é uma aplicação web simples que permite que o usuário insira sua data d
 
 ## Como usar
 
-Para usar a aplicação, basta acessar o endereço http://localhost no seu navegador e preencher o formulário com sua data de nascimento e hora.
+Está é uma amostra de execução para o serviço, baseado nas configurações e leitura do código, por notivos de segurança e falta de habilidades na execução de serviços com aws, onde sigo me aprimorando opto por não liberar o acesso, por falta de dominio aos criterios de segurança da plataforma deixo apenas de amostra para sua observação e sua conposição a fim de sua apreciação.
 
 ## Requisitos
 
