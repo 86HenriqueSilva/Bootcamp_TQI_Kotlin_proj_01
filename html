@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora de Idade</title>
+</head>
+<body>
+	<h1>Calculadora de Idade</h1>
+	<p>Seu resultado:</p>
+	<p>Você nasceu em {{dia}} de {{mes}} de {{ano}} às {{hora}} horas da {{periodo}}</p>
+	<p>Você já viveu {{dias}} dias, {{meses}} meses, {{anos}} anos e {{horas}} horas.</p>
+	{% if vida_restante > 0 %}
+	<p>Acaso não lhe falte sorte, Você ainda tem cerca de {{vida_restante}} anos de vida.</p>
+	{% else %}
+	<p>Você já viveu mais do que a média de vida atual.</p>
+	{% endif %}
+</body>
+</html>
