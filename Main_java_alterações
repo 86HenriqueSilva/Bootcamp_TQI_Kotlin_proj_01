@@ -1,0 +1,77 @@
+ // Para evitar entradas inválidas e tornar o código mais interessante, podemos implementar algumas melhorias:
+    Incluir validação de entrada de dados nas operações matemáticas, garantindo que os valores informados sejam numéricos. 
+    Isso pode ser feito utilizando uma estrutura condicional e tratamento de exceções.
+    Incluir um menu de opções para que o usuário escolha qual operação deseja realizar.
+    Para a classe Mensagem, podemos adicionar um método que retorne a mensagem de acordo com a hora atual do sistema,
+    ao invés de receber a hora como argumento.
+    Para a classe Emprestimo, podemos permitir que o usuário informe o número de parcelas desejadas, 
+    e calcular as taxas de forma dinâmica, ao invés de ter métodos separados para cada opção. //
+    
+    package one.digitalinnovation.basecamp;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Selecione a operação que deseja realizar: ");
+        System.out.println("1 - Soma");
+        System.out.println("2 - Subtração");
+        System.out.println("3 - Multiplicação");
+        System.out.println("4 - Divisão");
+
+        int opcao = input.nextInt();
+
+        switch (opcao) {
+            case 1:
+                System.out.print("Digite o primeiro número: ");
+                double num1 = input.nextDouble();
+                System.out.print("Digite o segundo número: ");
+                double num2 = input.nextDouble();
+                System.out.println("O resultado da soma é: " + Calculadora.soma(num1, num2));
+                break;
+            case 2:
+                System.out.print("Digite o primeiro número: ");
+                num1 = input.nextDouble();
+                System.out.print("Digite o segundo número: ");
+                num2 = input.nextDouble();
+                System.out.println("O resultado da subtração é: " + Calculadora.subtracao(num1, num2));
+                break;
+            case 3:
+                System.out.print("Digite o primeiro número: ");
+                num1 = input.nextDouble();
+                System.out.print("Digite o segundo número: ");
+                num2 = input.nextDouble();
+                System.out.println("O resultado da multiplicação é: " + Calculadora.multiplicacao(num1, num2));
+                break;
+            case 4:
+                System.out.print("Digite o primeiro número: ");
+                num1 = input.nextDouble();
+                System.out.print("Digite o segundo número: ");
+                num2 = input.nextDouble();
+                System.out.println("O resultado da divisão é: " + Calculadora.divisao(num1, num2));
+                break;
+            default:
+                System.out.println("Opção inválida.");
+                break;
+        }
+
+        System.out.println("Mensagem do dia: " + Mensagem.getMensagemDoDia());
+
+        System.out.print("Digite o valor do empréstimo: ");
+        double valor = input.nextDouble();
+        System.out.print("Digite o número de parcelas: ");
+        int numParcelas = input.nextInt();
+        Emprestimo.calcular(valor, numParcelas);
+
+    }
+}
+
+// Note que incluímos um menu de opções para que o usuário escolha qual operação deseja realizar.
+Em seguida, validamos as entradas de dados utilizando a classe Scanner e tratamento de exceções. 
+Para a classe Mensagem, adicionamos um método que retorna a mensagem do dia de acordo com a hora atual do sistema.
+
+
