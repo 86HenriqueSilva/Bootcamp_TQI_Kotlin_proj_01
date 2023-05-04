@@ -1,0 +1,50 @@
+public static void obterMensagem(int hora) {
+    if (hora >= 5 && hora <= 12) {
+        mensagemBomDia();
+    } else if (hora >= 13 && hora <= 17) {
+        mensagemBoaTarde();
+    } else if (hora >= 18 || hora <= 4) {
+        mensagemBoaNoite();
+    } else {
+        System.out.println("Hora inválida.");
+    }
+}
+
+// Nesse caso, o código verifica se a hora está dentro de cada um dos intervalos relevantes usando operadores lógicos e comparações.
+Se a hora não estiver dentro de nenhum dos intervalos, uma mensagem de "Hora inválida" será exibida.
+Para evitar entradas inválidas, podemos definir um valor padrão para a hora, caso a entrada seja inválida.//
+
+public static void obterMensagem(int hora) {
+    if (hora >= 0 && hora <= 23) {
+        if (hora >= 5 && hora <= 12) {
+            mensagemBomDia();
+        } else if (hora >= 13 && hora <= 17) {
+            mensagemBoaTarde();
+        } else {
+            mensagemBoaNoite();
+        }
+    } else {
+        System.out.println("Hora inválida. Usando hora padrão de 0.");
+        mensagemBoaNoite();
+    }
+}
+
+// Nesse caso, o código primeiro verifica se a hora está dentro do intervalo válido (0-23). 
+Se a hora for válida, o código prossegue como antes. Se a hora não for válida, 
+o código imprime uma mensagem informando que a hora é inválida e define a hora padrão como 0. 
+Em seguida, ele chama o método de mensagem apropriado para essa hora. //
+
+// unificar o código em uma única instrução if-else //
+
+public static void obterMensagem(int hora) {
+    hora = hora < 0 || hora > 23 ? 0 : hora; // Define a hora padrão como 0 se a entrada for inválida
+    String mensagem = hora >= 5 && hora <= 12 ? "Bom dia!" :
+                      hora >= 13 && hora <= 17 ? "Boa tarde!" :
+                      "Boa noite!";
+    System.out.println(mensagem);
+}
+
+// a primeira instrução if-else verifica se a entrada é inválida e define a hora padrão como 0.
+Em seguida, uma única instrução if-else é usada para determinar a mensagem a ser exibida com base na hora atual.
+Isso é possível usando a operação ternária (condição ? valorSeVerdadeiro : valorSeFalso) em cascata. 
+A mensagem é armazenada em uma variável de string e, em seguida, impressa usando o método System.out.println(). //
