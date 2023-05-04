@@ -1,0 +1,65 @@
+// Podemos melhorar o código adicionando algumas validações para evitar entradas inválidas e torná-lo mais interessante. Aqui estão algumas sugestões:
+    Validação do valor do empréstimo: podemos adicionar uma validação para garantir que o valor do empréstimo seja maior que zero.
+    Validação do número de parcelas: podemos adicionar uma validação para garantir que o número de parcelas seja igual a 2 ou 3, 
+    e exibir uma mensagem de erro se o valor não estiver dentro desses limites.
+    Permitir ao usuário escolher o número de parcelas: em vez de fixar o número de parcelas, podemos permitir que o usuário escolha o número de parcelas, 
+    fornecendo uma opção no console.
+    Melhorar a exibição da mensagem: podemos melhorar a mensagem exibida ao usuário, tornando-a mais amigável e informativa.
+    Aqui está um exemplo de como poderíamos implementar essas melhorias: //
+    
+    public class Emprestimo {
+
+    public static int getDuasParcelas() {
+        return 2;
+    }
+
+    public static int getTresParcelas() {
+        return 3;
+    }
+
+    public static double getTaxaDuasParcelas() {
+        return 0.3;
+    }
+
+    public static double getTaxaTresParcelas() {
+        return 0.45;
+    }
+
+    public static void calcular(double valor, int parcelas) {
+        if (valor <= 0) {
+            System.out.println("O valor do empréstimo deve ser maior que zero.");
+            return;
+        }
+
+        if (parcelas != getDuasParcelas() && parcelas != getTresParcelas()) {
+            System.out.println("O número de parcelas deve ser 2 ou 3.");
+            return;
+        }
+
+        double taxa = parcelas == getDuasParcelas() ? getTaxaDuasParcelas() : getTaxaTresParcelas();
+        double valorFinal = valor + (valor * taxa);
+
+        System.out.printf("Valor do empréstimo: R$ %.2f\n", valor);
+        System.out.printf("Número de parcelas: %d\n", parcelas);
+        System.out.printf("Taxa de juros: %.2f%%\n", taxa * 100);
+        System.out.printf("Valor total do empréstimo: R$ %.2f\n", valorFinal);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o valor do empréstimo: ");
+        double valor = scanner.nextDouble();
+
+        System.out.println("Escolha o número de parcelas:");
+        System.out.println("1. 2 parcelas");
+        System.out.println("2. 3 parcelas");
+        int opcao = scanner.nextInt();
+
+        int parcelas = opcao == 1 ? getDuasParcelas() : getTresParcelas();
+        calcular(valor, parcelas);
+    }
+}
+
+// Nessa versão a validação do valor do empréstimo é feita antes de executar o cálculo,
+o usuário é convidado a escolher o número de parcelas através de um menu e a mensagem de saída é formatada de forma mais amigável e informativa. //
