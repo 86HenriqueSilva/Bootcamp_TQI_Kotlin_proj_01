@@ -1,0 +1,63 @@
+package one.digitalinnovation.basecamp;
+
+/**
+ * Classe de exemplo para o exercício da Aula 1 de Métodos.
+ */
+public class Emprestimo {
+
+    public static int getDuasParcelas() {
+        return 2;
+    }
+
+    public static int getTresParcelas() {
+
+        return 3;
+    }
+
+    public static double getTaxaDuasParcelas() {
+
+        return 0.3;
+    }
+
+    public static double getTaxaTresParcelas() {
+
+        return 0.45;
+    }
+
+    public static void calcular(double valor, int parcelas) {
+
+        if (parcelas == 2) {
+
+            double valorFinal = valor + (valor * getTaxaDuasParcelas());
+
+            System.out.println("Valor final do empréstimo para 2 parcelas: R$ " + valorFinal);
+        } else if (parcelas == 3) {
+
+            double valorFinal = valor + (valor * getTaxaTresParcelas());
+
+            System.out.println("Valor final do empréstimo para 3 parcelas: R$ " + valorFinal);
+        } else {
+            System.out.println("Quantidade de parcelas não aceita.");
+        }
+
+    }
+
+}
+
+// Esse é um exemplo de classe em Java que tem o objetivo de calcular o valor final de um empréstimo,
+dado o valor emprestado e o número de parcelas. A classe é chamada de Emprestimo.
+Dentro da classe, existem quatro métodos estáticos: getDuasParcelas, getTresParcelas, getTaxaDuasParcelas e getTaxaTresParcelas.
+Esses métodos retornam informações relevantes para o cálculo do valor final do empréstimo.
+getDuasParcelas e getTresParcelas retornam o número de parcelas correspondentes, 
+enquanto getTaxaDuasParcelas e getTaxaTresParcelas retornam a taxa de juros correspondente a cada número de parcelas.
+O método calcular é o método principal da classe e recebe como parâmetros um valor e um número de parcelas.
+O método faz uso dos outros métodos estáticos da classe para calcular o valor final do empréstimo.
+O método usa uma estrutura condicional if-else para determinar qual taxa de juros aplicar com base no número de parcelas.
+Se o número de parcelas for igual a 2, é usada a taxa de juros retornada pelo método getTaxaDuasParcelas. Se for igual a 3,
+é usada a taxa de juros retornada pelo método getTaxaTresParcelas. Se o número de parcelas for diferente de 2 ou 3,
+é exibida uma mensagem informando que a quantidade de parcelas não é aceita.
+Em seguida, é calculado o valor final do empréstimo adicionando a ta
+xa de juros ao valor emprestado.
+O valor final é armazenado em uma variável local chamada valorFinal.
+Finalmente, é exibida uma mensagem na tela informando o valor final do empréstimo, que inclui o valor emprestado,
+a taxa de juros e o número de parcelas correspondente. A mensagem é exibida usando o método System.out.println.//
