@@ -1,0 +1,38 @@
+package one.digitalinnovation.basecamp;
+
+/**
+ * Classe principal dos exercícios da Aula 1 de Métodos.
+ */
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Calculadora
+        System.out.println("Exercício calculadora");
+        Calculadora.soma(3, 6);
+        Calculadora.subtracao(9, 1.8);
+        Calculadora.multiplicacao(7, 8);
+        Calculadora.divisao(5, 2.5);
+
+        // Mensagem
+        System.out.println("Exercício mensagem");
+        Mensagem.obterMensagem(9);
+        Mensagem.obterMensagem(14);
+        Mensagem.obterMensagem(1);
+
+        // Empréstimo
+        System.out.println("Exercício empréstimo");
+        Emprestimo.calcular(1000, Emprestimo.getDuasParcelas());
+        Emprestimo.calcular(1000, Emprestimo.getTresParcelas());
+        Emprestimo.calcular(1000, 5);
+
+    }
+}
+
+// Esse código é a classe principal do programa, onde estão sendo chamados os métodos das outras classes para realizar operações.
+O método main é o ponto de entrada do programa e é onde é feita a inicialização do código.
+No exemplo, a primeira seção de código é a Calculadora, onde são realizadas operações matemáticas básicas, como soma, subtração, multiplicação e divisão. 
+Em seguida, é apresentado o exemplo da classe Mensagem, que retorna uma mensagem dependendo da hora do dia passada como argumento.
+Por fim, é apresentado o exemplo da classe Emprestimo, que realiza cálculos de empréstimo com duas ou três parcelas.
+Essa classe Main é uma classe utilitária que permite executar as funcionalidades das outras classes do programa de forma centralizada. 
+Dessa forma, o programa se torna mais organizado e fácil de manter. //
