@@ -1,0 +1,44 @@
+package one.digitalinnovation.basecamp;
+
+/**
+ * Classe de exemplo para o exercício da Aula 2 de Métodos.
+ */
+public class Quadrilatero {
+
+    public static void area(double lado) {
+        if (lado <= 0) {
+            System.out.println("Valor inválido para o lado do quadrado.");
+        } else {
+            System.out.println("Área do quadrado: " + lado * lado);
+        }
+    }
+
+    public static void area(double lado1, double lado2) {
+        if (lado1 <= 0 || lado2 <= 0) {
+            System.out.println("Valores inválidos para os lados do retângulo.");
+        } else {
+            System.out.println("Área do retângulo: " + lado1 * lado2);
+        }
+    }
+
+    public static void area(double baseMaior, double baseMenor, double altura) {
+        if (baseMaior <= 0 || baseMenor <= 0 || altura <= 0) {
+            System.out.println("Valores inválidos para as dimensões do trapézio.");
+        } else {
+            System.out.println("Área do trapézio: " + ((baseMaior + baseMenor) * altura) / 2);
+        }
+    }
+
+    public static void area(float diagonal1, float diagonal2) {
+        if (diagonal1 <= 0 || diagonal2 <= 0) {
+            System.out.println("Valores inválidos para as diagonais do losango.");
+        } else {
+            System.out.println("Área do losango: " + (diagonal1 * diagonal2) / 2);
+        }
+    }
+}
+
+
+// foram adicionadas condições para checar se os valores de entrada são maiores do que zero para os lados do quadrado,
+retângulo e trapézio, e para as diagonais do losango. Caso algum valor seja menor ou igual a zero, 
+uma mensagem de erro é exibida ao invés de calcular a área. //
