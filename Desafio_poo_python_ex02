@@ -1,0 +1,94 @@
+class Funcionario:
+    def __init__(self, nome, salario):
+        self._nome = nome
+        self._salario = salario
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @property
+    def salario(self):
+        return self._salario
+
+    @salario.setter
+    def salario(self, salario):
+        if salario > 0:
+            self._salario = salario
+        else:
+            print("Salário inválido")
+
+    def calcular_pagamento(self):
+        pass
+
+    def __str__(self):
+        return f"Nome: {self._nome}, Salário: {self._salario}"
+
+
+class Gerente(Funcionario):
+    def __init__(self, nome, salario, bonus):
+        super().__init__(nome, salario)
+        self._bonus = bonus
+
+    @property
+    def bonus(self):
+        return self._bonus
+
+    @bonus.setter
+    def bonus(self, bonus):
+        if bonus >= 0:
+            self._bonus = bonus
+        else:
+            print("Bônus inválido")
+
+    def calcular_pagamento(self):
+        pagamento = self.salario + self.bonus
+        print(f"Pagamento do gerente {self.nome}: {pagamento}")
+
+
+class Desenvolvedor(Funcionario):
+    def __init__(self, nome, salario, linguagem):
+        super().__init__(nome, salario)
+        self._linguagem = linguagem
+
+    @property
+    def linguagem(self):
+        return self._linguagem
+
+    @linguagem.setter
+    def linguagem(self, linguagem):
+        self._linguagem = linguagem
+
+    def calcular_pagamento(self):
+        print(f"Pagamento do desenvolvedor {self.nome}: {self.salario}")
+
+
+class Designer(Funcionario):
+    def __init__(self, nome, salario, especialidade):
+        super().__init__(nome, salario)
+        self._especialidade = especialidade
+
+    @property
+    def especialidade(self):
+        return self._especialidade
+
+    @especialidade.setter
+    def especialidade(self, especialidade):
+        self._especialidade = especialidade
+
+    def calcular_pagamento(self):
+        print(f"Pagamento do designer {self.nome}: {self.salario}")
+
+
+def main():
+    gerente = Gerente("João", 5000.0, 1000.0)
+    desenvolvedor = Desenvolvedor("Maria", 3000.0, "Python")
+    designer = Designer("Carlos", 2500.0, "UI/UX")
+
+    gerente.calcular_pagamento()
+    desenvolvedor.calcular_pagamento()
+    designer.calcular_pagamento()
+
+
+if __name__ == "__main__":
+    main()
