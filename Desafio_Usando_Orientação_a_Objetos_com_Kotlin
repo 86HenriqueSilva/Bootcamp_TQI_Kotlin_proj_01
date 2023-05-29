@@ -1,0 +1,69 @@
+// Definição da classe principal
+class FormacaoEducacional(
+    val nome: String,
+    val descricao: String,
+    val cursos: MutableList<Curso> = mutableListOf()
+) {
+    // Método para adicionar um curso à formação
+    fun adicionarCurso(curso: Curso) {
+        cursos.add(curso)
+    }
+
+    // Método para listar os cursos da formação
+    fun listarCursos() {
+        if (cursos.isEmpty()) {
+            println("Não há cursos disponíveis para esta formação.")
+        } else {
+            println("Cursos da formação \"$nome\":")
+            cursos.forEach { curso ->
+                println("- ${curso.nome}")
+            }
+        }
+    }
+}
+
+// Definição da classe Curso
+class Curso(val nome: String, val duracao: Int)
+
+// Função principal
+fun main() {
+    // Criação das formações educacionais
+    val formacao1 = criarFormacaoEducacional()
+    val formacao2 = criarFormacaoEducacional()
+
+    // Criação dos cursos
+    val curso1 = criarCurso()
+    val curso2 = criarCurso()
+    val curso3 = criarCurso()
+
+    // Adicionando os cursos às formações
+    formacao1.adicionarCurso(curso1)
+    formacao1.adicionarCurso(curso2)
+    formacao2.adicionarCurso(curso3)
+
+    // Listando os cursos das formações
+    formacao1.listarCursos()
+    formacao2.listarCursos()
+}
+
+// Função auxiliar para criar uma formação educacional com entrada de dados validada
+fun criarFormacaoEducacional(): FormacaoEducacional {
+    println("Criando uma formação educacional:")
+    print("Digite o nome da formação: ")
+    val nome = readLine() ?: throw IllegalArgumentException("Nome da formação não pode ser vazio.")
+    print("Digite a descrição da formação: ")
+    val descricao = readLine() ?: throw IllegalArgumentException("Descrição da formação não pode ser vazia.")
+
+    return FormacaoEducacional(nome, descricao)
+}
+
+// Função auxiliar para criar um curso com entrada de dados validada
+fun criarCurso(): Curso {
+    println("Criando um curso:")
+    print("Digite o nome do curso: ")
+    val nome = readLine() ?: throw IllegalArgumentException("Nome do curso não pode ser vazio.")
+    print("Digite a duração do curso (em horas): ")
+    val duracao = readLine()?.toIntOrNull() ?: throw IllegalArgumentException("Duração do curso inválida.")
+
+    return Curso(nome, duracao)
+}
